@@ -35,7 +35,7 @@ fetch('http://localhost:3000/comidas')
             <img src="${comida.imagemUrl}" alt="${comida.nome}" class="card-img">
             <div class="card-content">
                 <h3 class="card-title">${comida.nome}</h3>
-                <p class="card-preco">R$ ${comida.preco.toFixed(2)}</p>
+                <p class="card-preco">R$ ${comida.preco}</p>
             </div>
         `;
         
