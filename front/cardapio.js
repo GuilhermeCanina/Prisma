@@ -1,14 +1,12 @@
-
 fetch('http://localhost:3000/comidas')
     .then(response => response.json())
     .then(data => console.table(data))
 
-
-
 function cadastrar() {
     let dados = {
         nome: document.getElementById('nome').value,
-        preco: parseFloat(document.getElementById('preco').value)
+        preco: parseFloat(document.getElementById('preco').value),
+        imagemUrl: document.getElementById('imagemUrl').value
     }
     fetch('http://localhost:3000/comidas',
         {
@@ -20,7 +18,7 @@ function cadastrar() {
         })
         .then(resp => resp.json())
         .then(resp => {
-            alert("Comidas cadastrado com sucesso!");
+            alert("Comida cadastrada com sucesso!");
             window.location.reload();
         });
 }
@@ -28,13 +26,20 @@ function cadastrar() {
 fetch('http://localhost:3000/comidas')
 .then(response => response.json())
 .then(comidas => {
-    const tabela = document.getElementById('comidas');
+    const tabela = document.getElementById('comidas'); 
     comidas.forEach(comida => {
-        const linha = document.createElement('tr');
-        linha.innerHTML = `
-            <td>${comida.nome}</td>
-            <td>R$${comida.preco}</td>
+        const card = document.createElement('div');
+        card.classList.add('card');
+        
+        card.innerHTML = `
+            <img src="${comida.imagemUrl}" alt="${comida.nome}" class="card-img">
+            <div class="card-content">
+                <h3 class="card-title">${comida.nome}</h3>
+                <p class="card-preco">R$ ${comida.preco.toFixed(2)}</p>
+            </div>
         `;
-        tabela.appendChild(linha);
+        
+        tabela.appendChild(card);
     });
-});
+})
+.catch(err => console.log(err));
