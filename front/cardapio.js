@@ -42,4 +42,3 @@ fetch('http://localhost:3000/comidas')
         tabela.appendChild(card);
     });
 })
-.catch(err => console.log(err));
