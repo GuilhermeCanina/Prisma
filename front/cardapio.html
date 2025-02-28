@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comidas - Cards</title>
+    <link rel="stylesheet" href="css/cardapio.css">
+</head>
+
+<body>
+    <header>
+        <h1>Comidas - Cards</h1>
+    </header>
+    <div class="container">
+        <input type="text" id="nome" placeholder="Digite o nome da comida: " required>
+        <input type="text" id="preco" placeholder="Digite o preço da comida: " required>
+        <button onclick="cadastrar()">CADASTRAR</button>
+        <p id="resultado0"></p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody id="comidas">
+            
+        </tbody>
+    </table>
+</body>
+<script src="cardapio.js"></script>
+
+</html>
